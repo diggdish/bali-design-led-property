@@ -7,7 +7,7 @@ Static premium single-page website for a Bali property investment and retirement
 ```text
 assets/
   portfolio/
-    dezier-portfolio.pdf
+    dezier-portfolio.pdf  # kept in GitHub; excluded from Netlify deploy and linked as a raw GitHub download
     samara-bay.jpg
     samara-s7.jpg
     kiko-sejuk.jpg
