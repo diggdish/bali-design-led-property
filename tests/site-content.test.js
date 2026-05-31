@@ -148,6 +148,7 @@ const minimalHtml = fs.readFileSync(path.join(root, "minimal", "index.html"), "u
 
 assert.ok(minimalHtml.includes('<a class="wordmark" href="../">Dezier Studio</a>'), "minimal header wordmark should be Dezier Studio");
 assert.ok(!minimalHtml.includes('<a class="wordmark" href="../">Bali Design-Led Property</a>'), "minimal header wordmark should not use Bali Design-Led Property");
+assert.ok(!minimalHtml.includes('aria-label="Minimal page sections"'), "minimal header menu should be removed");
 
 for (const text of [
   "Bali Design-Led Property",
