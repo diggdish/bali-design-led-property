@@ -98,7 +98,7 @@ for (const text of [
   "Private residence",
   "Project type",
   "Samara Bay Residence",
-  "Sacra|stuja Cafe &amp; Resto",
+  "Sacra|Stuja Cafe &amp; Resto",
   "Hospitality / Cafe &amp; Resto",
   "Batuan Villa",
   "Private Residence",
@@ -166,7 +166,7 @@ assert.ok(minimalCss.includes("object-fit: contain;"), "minimal slider images sh
 assert.ok(minimalCss.includes("height: calc(100svh - var(--header));"), "minimal hero image should fit the first screen");
 
 for (const text of [
-  "Sacra|stuja Cafe &amp; Resto",
+  "Sacra|Stuja Cafe &amp; Resto",
   "Batuan Villa",
 ]) {
   assert.ok(minimalHtml.includes(text), `minimal/index.html should include ${text}`);
