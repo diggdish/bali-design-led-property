@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "test": "node tests/site-content.test.js"
+  },
+  "devDependencies": {}
+}
