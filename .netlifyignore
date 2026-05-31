@@ -1,0 +1,6 @@
+.git/
+tests/
+.gitignore
+desktop-*-check.png
+mobile-*-check.png
+.portfolio-preview/
