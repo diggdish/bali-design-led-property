@@ -163,7 +163,8 @@ assert.ok(!minimalHtml.includes("Canberra, June 2026"), "minimal canberra sectio
 assert.ok(!minimalHtml.includes("Send enquiry"), "minimal contact form should be removed");
 assert.ok(minimalCss.includes("scroll-snap-type: x mandatory;"), "minimal projects should use horizontal sliders");
 assert.ok(minimalCss.includes("object-fit: contain;"), "minimal slider images should fit inside the screen");
-assert.ok(minimalCss.includes("height: calc(100svh - var(--header));"), "minimal hero image should fit the first screen");
+assert.ok(minimalCss.includes("background: transparent;"), "minimal header should not create a white bar over the hero");
+assert.ok(minimalCss.includes("height: 100svh;"), "minimal hero image should fill the first screen from the top");
 
 for (const text of [
   "Sacra|Stuja Cafe &amp; Resto",

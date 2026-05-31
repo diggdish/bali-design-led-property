@@ -26,22 +26,25 @@ img {
 }
 
 .minimal-header {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   display: flex;
   align-items: center;
   min-height: var(--header);
   padding: 18px clamp(18px, 4vw, 54px);
-  background: rgba(247, 245, 239, 0.94);
-  border-bottom: 1px solid var(--line);
+  background: transparent;
+  border-bottom: 0;
 }
 
 .wordmark {
-  color: inherit;
+  color: #ffffff;
   font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
 }
 
 .minimal-hero,
@@ -55,7 +58,7 @@ img {
 }
 
 .minimal-hero img {
-  height: calc(100svh - var(--header));
+  height: 100svh;
   min-height: 520px;
   object-fit: cover;
 }
