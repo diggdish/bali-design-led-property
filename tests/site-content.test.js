@@ -146,6 +146,9 @@ for (const id of [
 
 const minimalHtml = fs.readFileSync(path.join(root, "minimal", "index.html"), "utf8");
 
+assert.ok(minimalHtml.includes('<a class="wordmark" href="../">Dezier Studio</a>'), "minimal header wordmark should be Dezier Studio");
+assert.ok(!minimalHtml.includes('<a class="wordmark" href="../">Bali Design-Led Property</a>'), "minimal header wordmark should not use Bali Design-Led Property");
+
 for (const text of [
   "Bali Design-Led Property",
   "Andika Praba",
