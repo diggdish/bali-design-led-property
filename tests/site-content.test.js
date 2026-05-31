@@ -20,6 +20,11 @@ const requiredFiles = [
   "assets/portfolio/sacra-stuja-03.jpg",
   "assets/portfolio/sacra-stuja-04.jpg",
   "assets/portfolio/sacra-stuja-05.jpg",
+  "assets/portfolio/batuan-villa-01.jpg",
+  "assets/portfolio/batuan-villa-02.jpg",
+  "assets/portfolio/batuan-villa-03.jpg",
+  "assets/portfolio/batuan-villa-04.jpg",
+  "assets/portfolio/batuan-villa-05.jpg",
 ];
 
 for (const file of requiredFiles) {
@@ -95,6 +100,8 @@ for (const text of [
   "Samara Bay Residence",
   "Sacra|stuja Cafe &amp; Resto",
   "Hospitality / Cafe &amp; Resto",
+  "Batuan Villa",
+  "Private Residence",
   "O Block F&amp;B Restaurant",
   "dezierarchitect@gmail.com",
   "assets/portfolio/home-page.jpeg",
@@ -113,6 +120,11 @@ for (const image of [
   "assets/portfolio/sacra-stuja-03.jpg",
   "assets/portfolio/sacra-stuja-04.jpg",
   "assets/portfolio/sacra-stuja-05.jpg",
+  "assets/portfolio/batuan-villa-01.jpg",
+  "assets/portfolio/batuan-villa-02.jpg",
+  "assets/portfolio/batuan-villa-03.jpg",
+  "assets/portfolio/batuan-villa-04.jpg",
+  "assets/portfolio/batuan-villa-05.jpg",
 ]) {
   assert.ok(html.includes(image), `index.html should reference ${image}`);
 }
@@ -144,6 +156,7 @@ for (const text of [
   "Strategy defines the brief. Architecture gives it form.",
   "Selected Works",
   "Sacra|stuja Cafe &amp; Resto",
+  "Batuan Villa",
   "Project Index",
   "Canberra, June 2026",
   "National General Assembly",
@@ -167,6 +180,7 @@ for (const text of [
 for (const image of [
   "../assets/portfolio/home-page.jpeg",
   "../assets/portfolio/sacra-stuja-01.jpg",
+  "../assets/portfolio/batuan-villa-01.jpg",
   "../assets/portfolio/samara-bay.jpg",
   "../assets/portfolio/kiko-sejuk.jpg",
 ]) {
