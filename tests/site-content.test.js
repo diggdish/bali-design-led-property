@@ -15,6 +15,11 @@ const requiredFiles = [
   "assets/portfolio/wedding-chapel.jpg",
   "assets/portfolio/uwsun-eco-resort.jpg",
   "assets/portfolio/oblock-restaurant.jpg",
+  "assets/portfolio/sacra-stuja-01.jpg",
+  "assets/portfolio/sacra-stuja-02.jpg",
+  "assets/portfolio/sacra-stuja-03.jpg",
+  "assets/portfolio/sacra-stuja-04.jpg",
+  "assets/portfolio/sacra-stuja-05.jpg",
 ];
 
 for (const file of requiredFiles) {
@@ -88,6 +93,8 @@ for (const text of [
   "Private residence",
   "Project type",
   "Samara Bay Residence",
+  "Sacra|stuja Cafe &amp; Resto",
+  "Hospitality / Cafe &amp; Resto",
   "O Block F&amp;B Restaurant",
   "dezierarchitect@gmail.com",
   "assets/portfolio/home-page.jpeg",
@@ -101,6 +108,11 @@ for (const image of [
   "assets/portfolio/uwsun-eco-resort.jpg",
   "assets/portfolio/samara-bay.jpg",
   "assets/portfolio/oblock-restaurant.jpg",
+  "assets/portfolio/sacra-stuja-01.jpg",
+  "assets/portfolio/sacra-stuja-02.jpg",
+  "assets/portfolio/sacra-stuja-03.jpg",
+  "assets/portfolio/sacra-stuja-04.jpg",
+  "assets/portfolio/sacra-stuja-05.jpg",
 ]) {
   assert.ok(html.includes(image), `index.html should reference ${image}`);
 }
@@ -131,6 +143,7 @@ for (const text of [
   "We design for place, not decoration.",
   "Strategy defines the brief. Architecture gives it form.",
   "Selected Works",
+  "Sacra|stuja Cafe &amp; Resto",
   "Project Index",
   "Canberra, June 2026",
   "National General Assembly",
@@ -153,6 +166,7 @@ for (const text of [
 
 for (const image of [
   "../assets/portfolio/home-page.jpeg",
+  "../assets/portfolio/sacra-stuja-01.jpg",
   "../assets/portfolio/samara-bay.jpg",
   "../assets/portfolio/kiko-sejuk.jpg",
 ]) {
