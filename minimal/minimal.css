@@ -83,7 +83,9 @@ section,
 }
 
 .minimal-hero {
-  padding-top: clamp(26px, 5vw, 70px);
+  max-width: none;
+  padding-top: 0;
+  padding-inline: 0;
   padding-bottom: clamp(88px, 13vw, 170px);
 }
 
@@ -93,8 +95,16 @@ section,
 }
 
 .minimal-hero img {
-  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: calc(100svh - 58px);
+  min-height: 520px;
   object-fit: cover;
+}
+
+.minimal-hero .hero-grid {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: clamp(36px, 6vw, 86px) clamp(18px, 4vw, 54px) 0;
 }
 
 .hero-grid,

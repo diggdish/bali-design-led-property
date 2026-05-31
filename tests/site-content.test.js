@@ -145,10 +145,12 @@ for (const id of [
 }
 
 const minimalHtml = fs.readFileSync(path.join(root, "minimal", "index.html"), "utf8");
+const minimalCss = fs.readFileSync(path.join(root, "minimal", "minimal.css"), "utf8");
 
 assert.ok(minimalHtml.includes('<a class="wordmark" href="../">Dezier Studio</a>'), "minimal header wordmark should be Dezier Studio");
 assert.ok(!minimalHtml.includes('<a class="wordmark" href="../">Bali Design-Led Property</a>'), "minimal header wordmark should not use Bali Design-Led Property");
 assert.ok(!minimalHtml.includes('aria-label="Minimal page sections"'), "minimal header menu should be removed");
+assert.ok(minimalCss.includes("height: calc(100svh - 58px);"), "minimal hero image should fit the first screen");
 
 for (const text of [
   "Bali Design-Led Property",
