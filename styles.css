@@ -437,6 +437,15 @@ a {
   padding: clamp(20px, 3vw, 34px);
 }
 
+.project-name-only {
+  display: flex;
+  align-items: end;
+}
+
+.project-name-only h3 {
+  margin: 0;
+}
+
 .project-content h3 {
   margin-top: 0;
 }

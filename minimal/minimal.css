@@ -252,6 +252,24 @@ h3 {
   background: var(--soft);
 }
 
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.work-gallery img:first-child {
+  grid-column: 1 / -1;
+}
+
+.work-name-only {
+  align-self: end;
+}
+
+.work-name-only h3 {
+  margin-bottom: 0;
+}
+
 .work-meta p {
   margin-bottom: 8px;
 }
