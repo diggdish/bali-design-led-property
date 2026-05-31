@@ -152,6 +152,8 @@ assert.ok(!minimalHtml.includes('<a class="wordmark" href="../">Bali Design-Led 
 assert.ok(!minimalHtml.includes('aria-label="Minimal page sections"'), "minimal header menu should be removed");
 assert.ok(!minimalHtml.includes('class="hero-grid"'), "minimal hero text block should be removed");
 assert.ok(!minimalHtml.includes("Alternative route / editorial version"), "minimal hero kicker should be removed");
+assert.ok(!minimalHtml.includes('id="about"'), "minimal about section should be removed");
+assert.ok(!minimalHtml.includes("Property thinking, held quietly."), "minimal about heading should be removed");
 assert.ok(minimalCss.includes("height: calc(100svh - 58px);"), "minimal hero image should fit the first screen");
 
 for (const text of [
