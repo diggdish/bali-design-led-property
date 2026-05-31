@@ -30,8 +30,10 @@ assert.ok(
 );
 assert.ok(!html.includes("<footer"), "footer should be removed");
 assert.ok(html.includes('class="scroll-logo"'), "fixed Dezier Studio logo should be present");
-assert.ok(!css.includes("mix-blend-mode"), "fixed header and logo should not use blend mode");
-assert.ok(css.includes("backdrop-filter"), "fixed navigation should have a readable floating background");
+assert.ok(!html.includes("<small>architecture</small>"), "fixed logo should not include architecture label");
+assert.ok(css.includes("mix-blend-mode"), "fixed header and logo should use the clean transparent scroll style");
+assert.ok(!css.includes("backdrop-filter"), "fixed navigation should not use the floating glass background");
+assert.ok(html.includes('class="hero-statement"'), "hero wording should sit below the home image");
 const removedText = [
   phrase(80, 114, 105, 118, 97, 116, 101, 32, 99, 111, 110, 99, 101, 112, 116, 32, 102, 111, 114, 32, 65, 117, 115, 116, 114, 97, 108, 105, 97, 110, 32, 108, 105, 102, 101, 115, 116, 121, 108, 101, 32, 105, 110, 118, 101, 115, 116, 111, 114, 115),
   phrase(80, 114, 101, 112, 97, 114, 101, 100, 32, 102, 111, 114, 32, 99, 111, 110, 118, 101, 114, 115, 97, 116, 105, 111, 110, 115, 32, 97, 114, 111, 117, 110, 100, 32, 116, 104, 101, 32, 65, 76, 71, 65, 32, 78, 97, 116, 105, 111, 110, 97, 108, 32, 71, 101, 110, 101, 114, 97, 108, 32, 65, 115, 115, 101, 109, 98, 108, 121),
