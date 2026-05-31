@@ -2,6 +2,7 @@
   --paper: #f7f5ef;
   --ink: #171717;
   --line: #d6d0c6;
+  --gallery: #10100f;
   --header: 58px;
 }
 
@@ -64,16 +65,27 @@ img {
 }
 
 .project-slider {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
   border-top: 1px solid var(--line);
+  background: var(--gallery);
+  overflow: hidden;
 }
 
 .project-slider h2 {
+  position: absolute;
+  left: clamp(18px, 4vw, 54px);
+  bottom: clamp(18px, 4vw, 44px);
+  z-index: 2;
   margin: 0;
-  padding: 18px clamp(18px, 4vw, 54px);
-  border-bottom: 1px solid var(--line);
+  max-width: min(760px, calc(100% - 36px));
+  padding: 0;
+  color: #ffffff;
   font-size: clamp(1.1rem, 2.6vw, 2.8rem);
   line-height: 1;
   font-weight: 650;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.58);
 }
 
 .slider-track {
@@ -82,9 +94,13 @@ img {
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  background: var(--paper);
-  height: calc(100svh - var(--header) - clamp(56px, 6vw, 94px));
-  min-height: 520px;
+  scrollbar-width: none;
+  background: var(--gallery);
+  height: 100%;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
@@ -104,7 +120,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: var(--paper);
+  background: var(--gallery);
 }
 
 @media (max-width: 680px) {
@@ -113,7 +129,8 @@ img {
   }
 
   .minimal-hero img,
-  .slide {
+  .slide,
+  .project-slider {
     min-height: 420px;
   }
 }

@@ -7,6 +7,7 @@ const requiredFiles = [
   "index.html",
   "minimal/index.html",
   "minimal/minimal.css",
+  "minimal/minimal-slider.js",
   "styles.css",
   "script.js",
   "assets/portfolio/home-page.jpeg",
@@ -146,6 +147,7 @@ for (const id of [
 
 const minimalHtml = fs.readFileSync(path.join(root, "minimal", "index.html"), "utf8");
 const minimalCss = fs.readFileSync(path.join(root, "minimal", "minimal.css"), "utf8");
+const minimalSliderJs = fs.readFileSync(path.join(root, "minimal", "minimal-slider.js"), "utf8");
 
 assert.ok(minimalHtml.includes('<a class="wordmark" href="../">Dezier Studio</a>'), "minimal header wordmark should be Dezier Studio");
 assert.ok(!minimalHtml.includes('<a class="wordmark" href="../">Bali Design-Led Property</a>'), "minimal header wordmark should not use Bali Design-Led Property");
@@ -165,6 +167,9 @@ assert.ok(minimalCss.includes("scroll-snap-type: x mandatory;"), "minimal projec
 assert.ok(minimalCss.includes("object-fit: contain;"), "minimal slider images should fit inside the screen");
 assert.ok(minimalCss.includes("background: transparent;"), "minimal header should not create a white bar over the hero");
 assert.ok(minimalCss.includes("height: 100svh;"), "minimal hero image should fill the first screen from the top");
+assert.ok(minimalCss.includes("--gallery: #10100f;"), "minimal sliders should use a dark gallery canvas");
+assert.ok(minimalHtml.includes('<script src="minimal-slider.js" defer></script>'), "minimal page should load the auto slider script");
+assert.ok(minimalSliderJs.includes("setInterval(advance, slideInterval);"), "minimal sliders should auto-advance");
 
 for (const text of [
   "Sacra|Stuja Cafe &amp; Resto",
