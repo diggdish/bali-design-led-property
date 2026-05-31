@@ -127,14 +127,14 @@ a {
 .hero-media img {
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  filter: saturate(0.85) contrast(1.02);
+  object-position: center center;
+  filter: saturate(1.04) contrast(1.02);
 }
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(23, 22, 21, 0.92) 0%, rgba(23, 22, 21, 0.63) 48%, rgba(23, 22, 21, 0.22) 100%),
-    linear-gradient(0deg, rgba(23, 22, 21, 0.65) 0%, rgba(23, 22, 21, 0.06) 62%);
+    linear-gradient(90deg, rgba(23, 22, 21, 0.82) 0%, rgba(23, 22, 21, 0.48) 45%, rgba(23, 22, 21, 0.12) 100%),
+    linear-gradient(0deg, rgba(23, 22, 21, 0.62) 0%, rgba(23, 22, 21, 0.04) 62%);
 }
 
 .hero-inner {

@@ -7,6 +7,7 @@ const requiredFiles = [
   "index.html",
   "styles.css",
   "script.js",
+  "assets/portfolio/home-page.jpeg",
   "assets/portfolio/cover.jpg",
   "assets/portfolio/samara-bay.jpg",
   "assets/portfolio/wedding-chapel.jpg",
@@ -84,6 +85,7 @@ for (const text of [
   "Samara Bay Residence",
   "O Block F&amp;B Restaurant",
   "dezierarchitect@gmail.com",
+  "assets/portfolio/home-page.jpeg",
 ]) {
   assert.ok(html.includes(text), `index.html should include ${text}`);
 }
