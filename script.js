@@ -26,7 +26,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 
 const revealTargets = document.querySelectorAll(
-  ".context, .profile-card, .project-card, .investment, .why-bali, .audience-grid article, .trust-grid div, .consultation, .contact"
+  ".context, .profile-card, .project-card, .process-section, .why-bali, .audience-grid article, .trust-grid div, .consultation, .contact"
 );
 
 if ("IntersectionObserver" in window) {

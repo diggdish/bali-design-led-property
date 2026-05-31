@@ -1,6 +1,6 @@
 # Bali design-led property website
 
-Static premium single-page website for a Bali property investment and retirement-lifestyle concept led by Andika Praba in collaboration with Dwik.
+Static premium single-page website for a Bali architecture and lifestyle property concept by Laksana Matra.
 
 ## Suggested image folder structure
 
