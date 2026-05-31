@@ -156,13 +156,12 @@ assert.ok(!minimalHtml.includes('id="about"'), "minimal about section should be 
 assert.ok(!minimalHtml.includes("Property thinking, held quietly."), "minimal about heading should be removed");
 assert.ok(!minimalHtml.includes('id="approach"'), "minimal approach section should be removed");
 assert.ok(!minimalHtml.includes("We design for place, not decoration."), "minimal manifesto content should be removed");
+assert.ok(!minimalHtml.includes('aria-labelledby="collaboration-title"'), "minimal collaboration section should be removed");
+assert.ok(!minimalHtml.includes("Strategy defines the brief. Architecture gives it form."), "minimal collaboration heading should be removed");
 assert.ok(minimalCss.includes("height: calc(100svh - 58px);"), "minimal hero image should fit the first screen");
 
 for (const text of [
   "Bali Design-Led Property",
-  "Andika Praba",
-  "Dwik / Dezier Studio",
-  "Strategy defines the brief. Architecture gives it form.",
   "Selected Works",
   "Sacra|stuja Cafe &amp; Resto",
   "Batuan Villa",
