@@ -150,14 +150,14 @@ const minimalCss = fs.readFileSync(path.join(root, "minimal", "minimal.css"), "u
 assert.ok(minimalHtml.includes('<a class="wordmark" href="../">Dezier Studio</a>'), "minimal header wordmark should be Dezier Studio");
 assert.ok(!minimalHtml.includes('<a class="wordmark" href="../">Bali Design-Led Property</a>'), "minimal header wordmark should not use Bali Design-Led Property");
 assert.ok(!minimalHtml.includes('aria-label="Minimal page sections"'), "minimal header menu should be removed");
+assert.ok(!minimalHtml.includes('class="hero-grid"'), "minimal hero text block should be removed");
+assert.ok(!minimalHtml.includes("Alternative route / editorial version"), "minimal hero kicker should be removed");
 assert.ok(minimalCss.includes("height: calc(100svh - 58px);"), "minimal hero image should fit the first screen");
 
 for (const text of [
   "Bali Design-Led Property",
   "Andika Praba",
   "Dwik / Dezier Studio",
-  "View selected works",
-  "Start a conversation",
   "We design for place, not decoration.",
   "Strategy defines the brief. Architecture gives it form.",
   "Selected Works",
