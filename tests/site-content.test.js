@@ -158,19 +158,16 @@ assert.ok(!minimalHtml.includes('id="approach"'), "minimal approach section shou
 assert.ok(!minimalHtml.includes("We design for place, not decoration."), "minimal manifesto content should be removed");
 assert.ok(!minimalHtml.includes('aria-labelledby="collaboration-title"'), "minimal collaboration section should be removed");
 assert.ok(!minimalHtml.includes("Strategy defines the brief. Architecture gives it form."), "minimal collaboration heading should be removed");
-assert.ok(minimalCss.includes("height: calc(100svh - 58px);"), "minimal hero image should fit the first screen");
+assert.ok(!minimalHtml.includes("Project Index"), "minimal project index should be removed");
+assert.ok(!minimalHtml.includes("Canberra, June 2026"), "minimal canberra section should be removed");
+assert.ok(!minimalHtml.includes("Send enquiry"), "minimal contact form should be removed");
+assert.ok(minimalCss.includes("scroll-snap-type: x mandatory;"), "minimal projects should use horizontal sliders");
+assert.ok(minimalCss.includes("object-fit: contain;"), "minimal slider images should fit inside the screen");
+assert.ok(minimalCss.includes("height: calc(100svh - var(--header));"), "minimal hero image should fit the first screen");
 
 for (const text of [
-  "Bali Design-Led Property",
-  "Selected Works",
   "Sacra|stuja Cafe &amp; Resto",
   "Batuan Villa",
-  "Project Index",
-  "Canberra, June 2026",
-  "National General Assembly",
-  "This website is an introduction to architectural and property concept discussions only.",
-  "Preferred meeting",
-  "Send enquiry",
 ]) {
   assert.ok(minimalHtml.includes(text), `minimal/index.html should include ${text}`);
 }
@@ -188,9 +185,15 @@ for (const text of [
 for (const image of [
   "../assets/portfolio/home-page.jpeg",
   "../assets/portfolio/sacra-stuja-01.jpg",
+  "../assets/portfolio/sacra-stuja-02.jpg",
+  "../assets/portfolio/sacra-stuja-03.jpg",
+  "../assets/portfolio/sacra-stuja-04.jpg",
+  "../assets/portfolio/sacra-stuja-05.jpg",
   "../assets/portfolio/batuan-villa-01.jpg",
-  "../assets/portfolio/samara-bay.jpg",
-  "../assets/portfolio/kiko-sejuk.jpg",
+  "../assets/portfolio/batuan-villa-02.jpg",
+  "../assets/portfolio/batuan-villa-03.jpg",
+  "../assets/portfolio/batuan-villa-04.jpg",
+  "../assets/portfolio/batuan-villa-05.jpg",
 ]) {
   assert.ok(minimalHtml.includes(image), `minimal/index.html should reference ${image}`);
 }
