@@ -75,6 +75,9 @@ const removedText = [
   "Who this is for",
   "Different futures, one careful starting point.",
   'id="audience"',
+  "Trust &amp; Guidance",
+  "Calm guidance before design decisions.",
+  'id="trust"',
   "Strategy meets design",
   "Plot",
   "plot",
@@ -137,7 +140,6 @@ for (const id of [
   'id="portfolio"',
   'id="process"',
   'id="why-bali"',
-  'id="trust"',
   'id="contact"',
 ]) {
   assert.ok(html.includes(id), `index.html should include section ${id}`);
