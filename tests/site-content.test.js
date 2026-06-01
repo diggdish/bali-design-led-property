@@ -70,6 +70,8 @@ const removedText = [
   "Design rooted in place",
   'id="collaboration"',
   "portfolio-backed expertise",
+  "Considering Bali as your next chapter?",
+  'id="consultation"',
   "Strategy meets design",
   "Plot",
   "plot",
@@ -97,8 +99,6 @@ for (const text of [
   "Long-Stay Living",
   "Boutique Villas",
   "Family Retreats",
-  "Book a Private Consultation",
-  "Download Portfolio",
   "Location / City",
   "Private residence",
   "Project type",
@@ -141,7 +141,6 @@ for (const id of [
   'id="why-bali"',
   'id="audience"',
   'id="trust"',
-  'id="consultation"',
   'id="contact"',
 ]) {
   assert.ok(html.includes(id), `index.html should include section ${id}`);
