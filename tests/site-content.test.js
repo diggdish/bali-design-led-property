@@ -63,6 +63,8 @@ const removedText = [
   phrase(65, 110, 100, 105, 107, 97, 32, 80, 114, 97, 98, 97),
   phrase(65, 110, 100, 105, 107, 97),
   phrase(68, 119, 105, 107),
+  "A calmer way to explore Bali as a next chapter.",
+  "Audience focus",
   "Strategy meets design",
   "Plot",
   "plot",
@@ -80,8 +82,6 @@ for (const text of [
   "desire",
   "Laksana Matra",
   "Design rooted in place",
-  "international clients",
-  "global clients",
   "design-led residences",
   "Discover",
   "Brief",
@@ -131,7 +131,6 @@ for (const image of [
 }
 
 for (const id of [
-  'id="context"',
   'id="about-dezier-studio"',
   'id="collaboration"',
   'id="portfolio"',
