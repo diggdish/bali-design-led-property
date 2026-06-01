@@ -82,6 +82,11 @@ const removedText = [
   "From first conversation to a clear architectural direction.",
   'href="#process"',
   'id="process"',
+  "About Dezier Studio",
+  "Design rooted in desire.",
+  'href="#about-dezier-studio"',
+  'id="about-dezier-studio"',
+  "Dezier Studio by Laksana Matra",
   "Strategy meets design",
   "Plot",
   "plot",
@@ -93,11 +98,8 @@ for (const text of removedText) {
 
 for (const text of [
   "Designing Your Future Home in Bali",
-  "About Dezier Studio",
   "Dezier Studio",
-  "desire",
   "Laksana Matra",
-  "Design rooted in desire.",
   "design-led residences",
   "Location / City",
   "Private residence",
@@ -135,7 +137,6 @@ for (const image of [
 }
 
 for (const id of [
-  'id="about-dezier-studio"',
   'id="portfolio"',
   'id="why-bali"',
   'id="contact"',
