@@ -172,6 +172,9 @@ assert.ok(minimalCss.includes("height: 100svh;"), "minimal hero image should fil
 assert.ok(minimalCss.includes("--gallery: #10100f;"), "minimal sliders should use a dark gallery canvas");
 assert.ok(minimalCss.includes(".sidebar-menu"), "minimal page should include a right sidebar menu");
 assert.ok(minimalCss.includes("translateX(100%)"), "minimal sidebar should be hidden by default");
+assert.ok(minimalCss.includes("width: min(50vw, 280px);"), "minimal sidebar should be reduced to half-width");
+assert.ok(minimalCss.includes("background: rgba(247, 245, 239, 0.72);"), "minimal sidebar panel should be transparent");
+assert.ok(minimalCss.includes('transform: rotate(180deg);'), "minimal menu icon should rotate when opened");
 assert.ok(minimalHtml.includes('<script src="minimal-slider.js" defer></script>'), "minimal page should load the auto slider script");
 assert.ok(minimalSliderJs.includes("setInterval(advance, slideInterval);"), "minimal sliders should auto-advance");
 assert.ok(minimalSliderJs.includes('classList.toggle("is-open"'), "minimal sidebar should toggle open and closed");

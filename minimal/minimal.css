@@ -65,7 +65,38 @@ img {
 }
 
 .menu-toggle {
-  padding: 8px 0;
+  position: relative;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  place-items: center;
+  transition: transform 220ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] {
+  transform: rotate(180deg);
+}
+
+.menu-toggle span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.menu-toggle span:nth-child(1) {
+  transform: translate(-8px, -8px);
+}
+
+.menu-toggle span:nth-child(2) {
+  transform: translate(0, 0);
+}
+
+.menu-toggle span:nth-child(3) {
+  transform: translate(8px, 8px);
 }
 
 .sidebar-menu {
@@ -81,21 +112,21 @@ img {
 }
 
 .sidebar-menu.is-open {
-  background: rgba(16, 16, 15, 0.34);
+  background: rgba(16, 16, 15, 0.12);
   opacity: 1;
   pointer-events: auto;
 }
 
 .sidebar-panel {
-  width: min(420px, 88vw);
+  width: min(50vw, 280px);
   min-height: 100%;
-  padding: clamp(22px, 5vw, 42px);
-  background: #f7f5ef;
+  padding: clamp(18px, 3.2vw, 28px);
+  background: rgba(247, 245, 239, 0.72);
   color: var(--ink);
   transform: translateX(100%);
   transition: transform 260ms ease;
   overflow-y: auto;
-  box-shadow: -24px 0 80px rgba(0, 0, 0, 0.24);
+  box-shadow: -18px 0 64px rgba(0, 0, 0, 0.18);
 }
 
 .sidebar-menu.is-open .sidebar-panel {
@@ -104,28 +135,28 @@ img {
 
 .sidebar-close {
   display: block;
-  margin: 0 0 clamp(44px, 9vh, 82px) auto;
+  margin: 0 0 clamp(28px, 7vh, 56px) auto;
   color: var(--ink);
   text-shadow: none;
 }
 
 .sidebar-label {
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   color: #8a694d;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .sidebar-group {
-  padding: 24px 0;
+  padding: 18px 0;
   border-top: 1px solid var(--line);
 }
 
 .sidebar-group h2 {
-  margin: 0 0 12px;
-  font-size: clamp(1.35rem, 4.5vw, 2.25rem);
+  margin: 0 0 10px;
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
   line-height: 1;
 }
 
@@ -134,7 +165,7 @@ img {
   display: block;
   width: fit-content;
   color: #5f5b54;
-  font-size: 1rem;
+  font-size: 0.88rem;
   line-height: 1.45;
   text-decoration: none;
 }
@@ -145,8 +176,8 @@ img {
 }
 
 .sidebar-contact {
-  margin-top: clamp(44px, 10vh, 84px);
-  padding-top: 24px;
+  margin-top: clamp(28px, 7vh, 52px);
+  padding-top: 18px;
   border-top: 1px solid var(--line);
 }
 

@@ -12,7 +12,7 @@ if (sidebarMenu && menuToggle && sidebarClose) {
   };
 
   menuToggle.addEventListener("click", () => {
-    setSidebarOpen(true);
+    setSidebarOpen(!sidebarMenu.classList.contains("is-open"));
   });
 
   sidebarClose.addEventListener("click", () => {
