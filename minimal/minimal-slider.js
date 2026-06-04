@@ -1,5 +1,38 @@
 const sliderTracks = document.querySelectorAll(".slider-track");
 const slideInterval = 3800;
+const sidebarMenu = document.querySelector(".sidebar-menu");
+const menuToggle = document.querySelector(".menu-toggle");
+const sidebarClose = document.querySelector(".sidebar-close");
+
+if (sidebarMenu && menuToggle && sidebarClose) {
+  const setSidebarOpen = (isOpen) => {
+    sidebarMenu.classList.toggle("is-open", isOpen);
+    sidebarMenu.setAttribute("aria-hidden", String(!isOpen));
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  menuToggle.addEventListener("click", () => {
+    setSidebarOpen(true);
+  });
+
+  sidebarClose.addEventListener("click", () => {
+    setSidebarOpen(false);
+    menuToggle.focus();
+  });
+
+  sidebarMenu.addEventListener("click", (event) => {
+    if (event.target === sidebarMenu || event.target.closest("a")) {
+      setSidebarOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && sidebarMenu.classList.contains("is-open")) {
+      setSidebarOpen(false);
+      menuToggle.focus();
+    }
+  });
+}
 
 sliderTracks.forEach((track) => {
   const slides = Array.from(track.querySelectorAll(".slide"));

@@ -170,12 +170,21 @@ assert.ok(minimalCss.includes("object-fit: contain;"), "minimal slider images sh
 assert.ok(minimalCss.includes("background: transparent;"), "minimal header should not create a white bar over the hero");
 assert.ok(minimalCss.includes("height: 100svh;"), "minimal hero image should fill the first screen from the top");
 assert.ok(minimalCss.includes("--gallery: #10100f;"), "minimal sliders should use a dark gallery canvas");
+assert.ok(minimalCss.includes(".sidebar-menu"), "minimal page should include a right sidebar menu");
+assert.ok(minimalCss.includes("translateX(100%)"), "minimal sidebar should be hidden by default");
 assert.ok(minimalHtml.includes('<script src="minimal-slider.js" defer></script>'), "minimal page should load the auto slider script");
 assert.ok(minimalSliderJs.includes("setInterval(advance, slideInterval);"), "minimal sliders should auto-advance");
+assert.ok(minimalSliderJs.includes('classList.toggle("is-open"'), "minimal sidebar should toggle open and closed");
 
 for (const text of [
+  "Projects",
+  "Residential",
+  "Restaurant &amp; Bar",
   "Sacra|Stuja Cafe &amp; Resto",
   "Batuan Villa",
+  "laksanamatraa@gmail.com",
+  "+6281338716636",
+  "dezier.studio",
 ]) {
   assert.ok(minimalHtml.includes(text), `minimal/index.html should include ${text}`);
 }
