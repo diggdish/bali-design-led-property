@@ -1,10 +1,13 @@
 const sliderTracks = document.querySelectorAll(".slider-track");
 const slideInterval = 3800;
+const heroInterval = 4600;
 const sidebarMenu = document.querySelector(".sidebar-menu");
 const menuToggle = document.querySelector(".menu-toggle");
-const sidebarClose = document.querySelector(".sidebar-close");
+const sidebarRows = document.querySelectorAll(".sidebar-row");
+const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+const heroDots = Array.from(document.querySelectorAll(".hero-dots button"));
 
-if (sidebarMenu && menuToggle && sidebarClose) {
+if (sidebarMenu && menuToggle) {
   const setSidebarOpen = (isOpen) => {
     sidebarMenu.classList.toggle("is-open", isOpen);
     sidebarMenu.setAttribute("aria-hidden", String(!isOpen));
@@ -13,11 +16,6 @@ if (sidebarMenu && menuToggle && sidebarClose) {
 
   menuToggle.addEventListener("click", () => {
     setSidebarOpen(!sidebarMenu.classList.contains("is-open"));
-  });
-
-  sidebarClose.addEventListener("click", () => {
-    setSidebarOpen(false);
-    menuToggle.focus();
   });
 
   sidebarMenu.addEventListener("click", (event) => {
@@ -32,6 +30,44 @@ if (sidebarMenu && menuToggle && sidebarClose) {
       menuToggle.focus();
     }
   });
+}
+
+sidebarRows.forEach((row) => {
+  const toggle = row.querySelector(".sidebar-row-toggle");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = row.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+});
+
+if (heroSlides.length > 1 && heroDots.length === heroSlides.length) {
+  let heroIndex = 0;
+
+  const setHeroSlide = (nextIndex) => {
+    heroIndex = (nextIndex + heroSlides.length) % heroSlides.length;
+
+    heroSlides.forEach((slide, index) => {
+      slide.classList.toggle("is-active", index === heroIndex);
+    });
+
+    heroDots.forEach((dot, index) => {
+      const isActive = index === heroIndex;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  heroDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => setHeroSlide(index));
+  });
+
+  setInterval(() => setHeroSlide(heroIndex + 1), heroInterval);
 }
 
 sliderTracks.forEach((track) => {
