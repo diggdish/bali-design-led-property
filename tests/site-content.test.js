@@ -209,6 +209,7 @@ for (const text of [
   "Sacra|Stuja Cafe &amp; Resto",
   "Batuan Villa",
   "laksanamatraa@gmail.com",
+  "https://wa.me/6281338716636",
   "+6281338716636",
   "dezier.studio",
 ]) {
