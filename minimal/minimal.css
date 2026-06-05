@@ -31,7 +31,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 40;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,6 +66,7 @@ img {
 
 .menu-toggle {
   position: relative;
+  z-index: 41;
   display: grid;
   width: 34px;
   height: 34px;

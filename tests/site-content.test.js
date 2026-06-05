@@ -176,6 +176,8 @@ assert.ok(minimalCss.includes("height: 100svh;"), "minimal hero image should fil
 assert.ok(minimalCss.includes("--gallery: #10100f;"), "minimal sliders should use a dark gallery canvas");
 assert.ok(minimalCss.includes(".sidebar-menu"), "minimal page should include a right sidebar menu");
 assert.ok(minimalCss.includes("translateX(100%)"), "minimal sidebar should be hidden by default");
+assert.ok(minimalCss.includes("z-index: 40;"), "minimal header should stay above the sidebar overlay so the menu button can close it");
+assert.ok(minimalCss.includes("z-index: 41;"), "minimal menu button should remain clickable while the sidebar is open");
 assert.ok(minimalCss.includes("width: min(50vw, 280px);"), "minimal sidebar should be reduced to half-width");
 assert.ok(minimalCss.includes("background: rgba(247, 245, 239, 0.72);"), "minimal sidebar panel should be transparent");
 assert.ok(minimalCss.includes('transform: rotate(180deg);'), "minimal menu icon should rotate when opened");
