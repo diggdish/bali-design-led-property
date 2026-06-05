@@ -14,6 +14,7 @@ const requiredFiles = [
   "assets/portfolio/home-page-2.jpeg",
   "assets/portfolio/home-page-3.jpeg",
   "assets/portfolio/home-page-4.jpeg",
+  "assets/portfolio/laksana-matra.jpg",
   "assets/portfolio/cover.jpg",
   "assets/portfolio/samara-bay.jpg",
   "assets/portfolio/wedding-chapel.jpg",
@@ -181,6 +182,8 @@ assert.ok(minimalCss.includes('transform: rotate(180deg);'), "minimal menu icon 
 assert.ok(minimalCss.includes(".sidebar-row-toggle"), "minimal sidebar should use three row toggles");
 assert.ok(minimalCss.includes(".hero-dots"), "minimal hero slider should include subtle dot controls");
 assert.ok(minimalCss.includes(".hero-slide.is-active"), "minimal hero slider should fade between active images");
+assert.ok(minimalCss.includes(".about-laksana"), "minimal page should include the Laksana Matra about section");
+assert.ok(minimalCss.includes(".about-portrait img"), "minimal about section should style the portrait image");
 assert.ok(minimalHtml.includes('<script src="minimal-slider.js" defer></script>'), "minimal page should load the auto slider script");
 assert.ok(minimalSliderJs.includes("setInterval(advance, slideInterval);"), "minimal sliders should auto-advance");
 assert.ok(minimalSliderJs.includes('classList.toggle("is-open"'), "minimal sidebar should toggle open and closed");
@@ -191,6 +194,9 @@ assert.ok(!minimalHtml.includes(">Close<"), "minimal sidebar should not show clo
 
 for (const text of [
   "About",
+  "Laksana Matra Karowista",
+  "Published design: 1st Winner, Atma Jaya University",
+  "https://issuu.com/arcaka/docs/arcaka_issue_11-_architourism",
   "Projects",
   "Contacts",
   "Residential",
@@ -219,6 +225,7 @@ for (const image of [
   "../assets/portfolio/home-page-2.jpeg",
   "../assets/portfolio/home-page-3.jpeg",
   "../assets/portfolio/home-page-4.jpeg",
+  "../assets/portfolio/laksana-matra.jpg",
   "../assets/portfolio/sacra-stuja-01.jpg",
   "../assets/portfolio/sacra-stuja-02.jpg",
   "../assets/portfolio/sacra-stuja-03.jpg",

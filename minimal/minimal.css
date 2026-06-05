@@ -291,6 +291,73 @@ img {
   transform: scale(1.25);
 }
 
+.about-laksana {
+  display: grid;
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+  min-height: 100svh;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.about-portrait {
+  min-height: 100%;
+  margin: 0;
+  background: var(--gallery);
+}
+
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  object-fit: cover;
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 760px;
+  padding: clamp(42px, 7vw, 110px);
+}
+
+.about-label {
+  margin: 0 0 22px;
+  color: #8a694d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-copy h1 {
+  margin: 0;
+  max-width: 10ch;
+  font-size: clamp(3.2rem, 9vw, 8.8rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.about-copy p:not(.about-label) {
+  margin: clamp(28px, 4vw, 48px) 0 0;
+  max-width: 720px;
+  color: #6c675f;
+  font-size: clamp(1rem, 1.75vw, 1.65rem);
+  line-height: 1.35;
+}
+
+.about-copy a {
+  display: inline-block;
+  width: fit-content;
+  margin-top: clamp(24px, 4vw, 42px);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+}
+
 .project-slider {
   position: relative;
   height: 100svh;
@@ -353,6 +420,23 @@ img {
 @media (max-width: 680px) {
   :root {
     --header: 56px;
+  }
+
+  .about-laksana {
+    grid-template-columns: 1fr;
+  }
+
+  .about-portrait img {
+    min-height: 56svh;
+  }
+
+  .about-copy {
+    min-height: 56svh;
+    padding: 34px 22px 44px;
+  }
+
+  .about-copy h1 {
+    max-width: 8ch;
   }
 
   .minimal-hero img,
