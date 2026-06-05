@@ -12,6 +12,8 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -233,6 +235,8 @@ img {
 .minimal-hero,
 .project-slider {
   width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .minimal-hero figure,
@@ -298,6 +302,8 @@ img {
   min-height: 100svh;
   background: var(--paper);
   border-top: 1px solid var(--line);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .about-portrait {
@@ -421,6 +427,10 @@ img {
 @media (max-width: 680px) {
   :root {
     --header: 56px;
+  }
+
+  html {
+    scroll-snap-type: y proximity;
   }
 
   .about-laksana {

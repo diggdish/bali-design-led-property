@@ -170,6 +170,9 @@ assert.ok(!minimalHtml.includes("Project Index"), "minimal project index should 
 assert.ok(!minimalHtml.includes("Canberra, June 2026"), "minimal canberra section should be removed");
 assert.ok(!minimalHtml.includes("Send enquiry"), "minimal contact form should be removed");
 assert.ok(minimalCss.includes("scroll-snap-type: x mandatory;"), "minimal projects should use horizontal sliders");
+assert.ok(minimalCss.includes("scroll-snap-type: y mandatory;"), "minimal page should snap vertically per section");
+assert.ok(minimalCss.includes("scroll-snap-align: start;"), "minimal sections should snap to the top of the viewport");
+assert.ok(minimalCss.includes("scroll-snap-stop: always;"), "minimal sections should stop cleanly per page");
 assert.ok(minimalCss.includes("object-fit: contain;"), "minimal slider images should fit inside the screen");
 assert.ok(minimalCss.includes("background: transparent;"), "minimal header should not create a white bar over the hero");
 assert.ok(minimalCss.includes("height: 100svh;"), "minimal hero image should fill the first screen from the top");
