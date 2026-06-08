@@ -191,6 +191,7 @@ assert.ok(minimalCss.includes("scroll-snap-align: start;"), "minimal sections sh
 assert.ok(minimalCss.includes("scroll-snap-stop: always;"), "minimal sections should stop cleanly per page");
 assert.ok(minimalCss.includes("object-fit: contain;"), "minimal slider images should fit inside the screen");
 assert.ok(minimalCss.includes("background: transparent;"), "minimal header should not create a white bar over the hero");
+assert.ok(minimalCss.includes("position: fixed;"), "minimal header should stay visible while scrolling");
 assert.ok(minimalCss.includes("height: 100svh;"), "minimal hero image should fill the first screen from the top");
 assert.ok(minimalCss.includes("--gallery: #10100f;"), "minimal sliders should use a dark gallery canvas");
 assert.ok(minimalCss.includes(".sidebar-menu"), "minimal page should include a right sidebar menu");
