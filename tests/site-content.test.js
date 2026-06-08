@@ -32,6 +32,22 @@ const requiredFiles = [
   "assets/portfolio/batuan-villa-05.jpg",
 ];
 
+for (let index = 6; index <= 11; index += 1) {
+  requiredFiles.push(`assets/portfolio/sacra-stuja-${String(index).padStart(2, "0")}.jpg`);
+}
+
+for (let index = 6; index <= 29; index += 1) {
+  requiredFiles.push(`assets/portfolio/batuan-villa-${String(index).padStart(2, "0")}.jpg`);
+}
+
+for (let index = 1; index <= 14; index += 1) {
+  requiredFiles.push(`assets/portfolio/kedisan-boutique-hotel-${String(index).padStart(2, "0")}.jpg`);
+}
+
+for (let index = 1; index <= 12; index += 1) {
+  requiredFiles.push(`assets/portfolio/molo-resto-${String(index).padStart(2, "0")}.jpg`);
+}
+
 for (const file of requiredFiles) {
   assert.ok(fs.existsSync(path.join(root, file)), `${file} should exist`);
 }
@@ -205,9 +221,12 @@ for (const text of [
   "Projects",
   "Contacts",
   "Residential",
+  "Hospitality",
   "Restaurant &amp; Bar",
   "Sacra|Stuja Cafe &amp; Resto",
   "Batuan Villa",
+  "Kedisan Boutique Hotel",
+  "Molo Resto",
   "laksanamatraa@gmail.com",
   "https://wa.me/6281338716636",
   "+6281338716636",
@@ -242,6 +261,12 @@ for (const image of [
   "../assets/portfolio/batuan-villa-03.jpg",
   "../assets/portfolio/batuan-villa-04.jpg",
   "../assets/portfolio/batuan-villa-05.jpg",
+  "../assets/portfolio/batuan-villa-29.jpg",
+  "../assets/portfolio/sacra-stuja-11.jpg",
+  "../assets/portfolio/kedisan-boutique-hotel-01.jpg",
+  "../assets/portfolio/kedisan-boutique-hotel-14.jpg",
+  "../assets/portfolio/molo-resto-01.jpg",
+  "../assets/portfolio/molo-resto-12.jpg",
 ]) {
   assert.ok(minimalHtml.includes(image), `minimal/index.html should reference ${image}`);
 }
