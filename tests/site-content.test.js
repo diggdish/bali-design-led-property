@@ -203,6 +203,8 @@ assert.ok(minimalCss.includes('transform: rotate(180deg);'), "minimal menu icon 
 assert.ok(minimalCss.includes(".sidebar-row-toggle"), "minimal sidebar should use three row toggles");
 assert.ok(minimalCss.includes(".hero-dots"), "minimal hero slider should include subtle dot controls");
 assert.ok(minimalCss.includes(".hero-slide.is-active"), "minimal hero slider should fade between active images");
+assert.ok(minimalCss.includes(".slider-dots"), "minimal project sliders should include subtle dot controls");
+assert.ok(minimalCss.includes(".slider-dots button.is-active"), "minimal project slider dots should show the active image");
 assert.ok(minimalCss.includes(".about-laksana"), "minimal page should include the Laksana Matra about section");
 assert.ok(minimalCss.includes(".about-portrait img"), "minimal about section should style the portrait image");
 assert.ok(minimalHtml.includes('<script src="minimal-slider.js" defer></script>'), "minimal page should load the auto slider script");
@@ -210,6 +212,8 @@ assert.ok(minimalSliderJs.includes("setInterval(advance, slideInterval);"), "min
 assert.ok(minimalSliderJs.includes('classList.toggle("is-open"'), "minimal sidebar should toggle open and closed");
 assert.ok(minimalSliderJs.includes("setHeroSlide"), "minimal hero slider should support dot navigation and autoplay");
 assert.ok(minimalSliderJs.includes("heroInterval"), "minimal hero slider should auto-advance");
+assert.ok(minimalSliderJs.includes('dots.className = "slider-dots";'), "minimal project sliders should create dot controls");
+assert.ok(minimalSliderJs.includes("setActiveDot"), "minimal project slider dots should track the active slide");
 assert.ok(!minimalHtml.includes("sidebar-close"), "minimal sidebar should not include a close button");
 assert.ok(!minimalHtml.includes(">Close<"), "minimal sidebar should not show close wording");
 

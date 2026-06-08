@@ -73,12 +73,38 @@ if (heroSlides.length > 1 && heroDots.length === heroSlides.length) {
 sliderTracks.forEach((track) => {
   const slides = Array.from(track.querySelectorAll(".slide"));
   if (slides.length < 2) return;
+  const slider = track.closest(".project-slider");
+  const dots = document.createElement("div");
+  const dotButtons = slides.map((_, slideIndex) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Show project image ${slideIndex + 1}`);
+    dots.appendChild(dot);
+    return dot;
+  });
 
   let index = 0;
   let paused = false;
 
+  dots.className = "slider-dots";
+  dots.setAttribute("aria-label", "Project image controls");
+  if (slider) slider.appendChild(dots);
+
+  const setActiveDot = () => {
+    dotButtons.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  };
+
   const goToSlide = (nextIndex) => {
     index = nextIndex % slides.length;
+    setActiveDot();
     track.scrollTo({
       left: slides[index].offsetLeft,
       behavior: "smooth",
@@ -111,9 +137,21 @@ sliderTracks.forEach((track) => {
     () => {
       const current = Math.round(track.scrollLeft / track.clientWidth);
       index = Math.max(0, Math.min(slides.length - 1, current));
+      setActiveDot();
     },
     { passive: true },
   );
 
+  dotButtons.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      paused = true;
+      goToSlide(dotIndex);
+      window.setTimeout(() => {
+        paused = false;
+      }, slideInterval);
+    });
+  });
+
+  setActiveDot();
   setInterval(advance, slideInterval);
 });
