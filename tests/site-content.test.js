@@ -5,11 +5,11 @@ const assert = require("node:assert");
 const root = path.resolve(__dirname, "..");
 const requiredFiles = [
   "index.html",
-  "minimal/index.html",
   "styles.css",
   "script.js",
-  "minimal/minimal.css",
-  "minimal/minimal-slider.js",
+  "_archive/minimal/index.html",
+  "_archive/minimal/minimal.css",
+  "_archive/minimal/minimal-slider.js",
   "assets/portfolio/home-page.jpeg",
   "assets/portfolio/home-page-2.jpeg",
   "assets/portfolio/home-page-3.jpeg",
@@ -40,10 +40,14 @@ for (const file of requiredFiles) {
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const js = fs.readFileSync(path.join(root, "script.js"), "utf8");
-const minimalHtml = fs.readFileSync(path.join(root, "minimal", "index.html"), "utf8");
-const minimalCss = fs.readFileSync(path.join(root, "minimal", "minimal.css"), "utf8");
-const minimalJs = fs.readFileSync(path.join(root, "minimal", "minimal-slider.js"), "utf8");
+const archivedHtml = fs.readFileSync(path.join(root, "_archive", "minimal", "index.html"), "utf8");
+const archivedCss = fs.readFileSync(path.join(root, "_archive", "minimal", "minimal.css"), "utf8");
+const archivedJs = fs.readFileSync(path.join(root, "_archive", "minimal", "minimal-slider.js"), "utf8");
 const netlify = fs.readFileSync(path.join(root, "netlify.toml"), "utf8");
+const netlifyIgnore = fs.readFileSync(path.join(root, ".netlifyignore"), "utf8");
+
+assert.ok(!fs.existsSync(path.join(root, "minimal")), "minimal folder should be archived, not live at root");
+assert.ok(netlifyIgnore.includes("_archive/"), "archived pages should not be deployed to Netlify");
 
 assert.ok(html.includes('<link rel="stylesheet" href="styles.css" />'), "root should load root stylesheet");
 assert.ok(html.includes('<script src="script.js" defer></script>'), "root should load root script");
@@ -101,9 +105,9 @@ for (const text of [
   assert.ok(js.includes(text), `root script.js should include ${text}`);
 }
 
-assert.ok(minimalHtml.includes("../assets/portfolio/home-page.jpeg"), "minimal page should keep subdirectory asset paths");
-assert.strictEqual(css, minimalCss, "root stylesheet should match the current minimal stylesheet");
-assert.strictEqual(js, minimalJs, "root script should match the current minimal script");
+assert.ok(archivedHtml.includes("../assets/portfolio/home-page.jpeg"), "archived minimal page should keep subdirectory asset paths");
+assert.strictEqual(css, archivedCss, "root stylesheet should match the archived minimal stylesheet");
+assert.strictEqual(js, archivedJs, "root script should match the archived minimal script");
 assert.ok(netlify.includes('publish = "."'), "Netlify should publish the static root");
 
 console.log("site content checks passed");

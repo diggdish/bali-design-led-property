@@ -1,6 +1,7 @@
 .git/
 .netlify/
 .deploy-netlify/
+_archive/
 Images/
 output/
 tests/
