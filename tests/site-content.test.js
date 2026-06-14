@@ -10,6 +10,10 @@ const requiredFiles = [
   "_archive/minimal/index.html",
   "_archive/minimal/minimal.css",
   "_archive/minimal/minimal-slider.js",
+  "assets/favicon.ico",
+  "assets/favicon-32.png",
+  "assets/favicon-512.png",
+  "assets/apple-touch-icon.png",
   "assets/portfolio/home-page.jpeg",
   "assets/portfolio/home-page-2.jpeg",
   "assets/portfolio/home-page-3.jpeg",
@@ -56,6 +60,9 @@ assert.ok(netlifyIgnore.includes("_archive/"), "archived pages should not be dep
 
 assert.ok(html.includes('<link rel="stylesheet" href="styles.css" />'), "root should load root stylesheet");
 assert.ok(html.includes('<script src="script.js" defer></script>'), "root should load root script");
+assert.ok(html.includes('<link rel="icon" href="assets/favicon.ico" sizes="any" />'), "root should load favicon ico");
+assert.ok(html.includes('<link rel="icon" type="image/png" href="assets/favicon-32.png" />'), "root should load png favicon");
+assert.ok(html.includes('<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />'), "root should load apple touch icon");
 assert.ok(!html.includes("../assets/"), "root should not reference parent-relative assets");
 assert.ok(!html.includes("minimal.css"), "root should not reference minimal stylesheet");
 assert.ok(!html.includes("minimal-slider.js"), "root should not reference minimal script");
