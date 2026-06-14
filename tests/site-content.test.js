@@ -34,6 +34,10 @@ for (let index = 1; index <= 12; index += 1) {
   requiredFiles.push(`assets/portfolio/molo-resto-${String(index).padStart(2, "0")}.jpg`);
 }
 
+for (let index = 2; index <= 16; index += 1) {
+  requiredFiles.push(`assets/portfolio/the-saturday-villas-${String(index).padStart(2, "0")}.jpg`);
+}
+
 for (const file of requiredFiles) {
   assert.ok(fs.existsSync(path.join(root, file)), `${file} should exist`);
 }
@@ -79,6 +83,7 @@ for (const image of [
   "assets/portfolio/home-page.jpeg",
   "assets/portfolio/home-page-4.jpeg",
   "assets/portfolio/the-saturday-villas-01.jpg",
+  "assets/portfolio/the-saturday-villas-16.jpg",
   "assets/portfolio/laksana-matra.jpg",
   "assets/portfolio/sacra-stuja-11.jpg",
   "assets/portfolio/batuan-villa-29.jpg",
