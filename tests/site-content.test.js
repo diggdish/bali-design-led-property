@@ -14,6 +14,7 @@ const requiredFiles = [
   "assets/portfolio/home-page-2.jpeg",
   "assets/portfolio/home-page-3.jpeg",
   "assets/portfolio/home-page-4.jpeg",
+  "assets/portfolio/the-saturday-villas-01.jpg",
   "assets/portfolio/laksana-matra.jpg",
 ];
 
@@ -65,6 +66,7 @@ for (const text of [
   "Published design: 1st Winner, Atma Jaya University",
   "Sacra|Stuja Cafe &amp; Resto",
   "Batuan Villa",
+  "The Saturday Villas",
   "Kedisan Boutique Hotel",
   "Molo Resto",
   "https://wa.me/6281338716636",
@@ -76,6 +78,7 @@ for (const text of [
 for (const image of [
   "assets/portfolio/home-page.jpeg",
   "assets/portfolio/home-page-4.jpeg",
+  "assets/portfolio/the-saturday-villas-01.jpg",
   "assets/portfolio/laksana-matra.jpg",
   "assets/portfolio/sacra-stuja-11.jpg",
   "assets/portfolio/batuan-villa-29.jpg",
