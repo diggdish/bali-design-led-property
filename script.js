@@ -1,48 +1,157 @@
-const filterButtons = document.querySelectorAll(".filter-button");
-const projectCards = document.querySelectorAll(".project-card");
+const sliderTracks = document.querySelectorAll(".slider-track");
+const slideInterval = 3800;
+const heroInterval = 4600;
+const sidebarMenu = document.querySelector(".sidebar-menu");
+const menuToggle = document.querySelector(".menu-toggle");
+const sidebarRows = document.querySelectorAll(".sidebar-row");
+const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+const heroDots = Array.from(document.querySelectorAll(".hero-dots button"));
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
+if (sidebarMenu && menuToggle) {
+  const setSidebarOpen = (isOpen) => {
+    sidebarMenu.classList.toggle("is-open", isOpen);
+    sidebarMenu.setAttribute("aria-hidden", String(!isOpen));
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  };
 
-    filterButtons.forEach((item) => {
-      item.classList.toggle("is-active", item === button);
-    });
+  menuToggle.addEventListener("click", () => {
+    setSidebarOpen(!sidebarMenu.classList.contains("is-open"));
+  });
 
-    projectCards.forEach((card) => {
-      const isMatch = filter === "all" || card.dataset.category === filter;
-      card.classList.toggle("is-hidden", !isMatch);
-    });
+  sidebarMenu.addEventListener("click", (event) => {
+    if (event.target === sidebarMenu || event.target.closest("a")) {
+      setSidebarOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && sidebarMenu.classList.contains("is-open")) {
+      setSidebarOpen(false);
+      menuToggle.focus();
+    }
+  });
+}
+
+sidebarRows.forEach((row) => {
+  const toggle = row.querySelector(".sidebar-row-toggle");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = row.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
   });
 });
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const target = document.querySelector(link.getAttribute("href"));
-    if (!target) return;
-    event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+if (heroSlides.length > 1 && heroDots.length === heroSlides.length) {
+  let heroIndex = 0;
+
+  const setHeroSlide = (nextIndex) => {
+    heroIndex = (nextIndex + heroSlides.length) % heroSlides.length;
+
+    heroSlides.forEach((slide, index) => {
+      slide.classList.toggle("is-active", index === heroIndex);
+    });
+
+    heroDots.forEach((dot, index) => {
+      const isActive = index === heroIndex;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  heroDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => setHeroSlide(index));
   });
-});
 
-const revealTargets = document.querySelectorAll(
-  ".context, .profile-card, .project-card, .process-section, .why-bali, .audience-grid article, .trust-grid div, .consultation, .contact"
-);
+  setInterval(() => setHeroSlide(heroIndex + 1), heroInterval);
+}
 
-if ("IntersectionObserver" in window) {
-  revealTargets.forEach((target) => target.classList.add("reveal"));
+sliderTracks.forEach((track) => {
+  const slides = Array.from(track.querySelectorAll(".slide"));
+  if (slides.length < 2) return;
+  const slider = track.closest(".project-slider");
+  const dots = document.createElement("div");
+  const dotButtons = slides.map((_, slideIndex) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Show project image ${slideIndex + 1}`);
+    dots.appendChild(dot);
+    return dot;
+  });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
+  let index = 0;
+  let paused = false;
+
+  dots.className = "slider-dots";
+  dots.setAttribute("aria-label", "Project image controls");
+  if (slider) slider.appendChild(dots);
+
+  const setActiveDot = () => {
+    dotButtons.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const goToSlide = (nextIndex) => {
+    index = nextIndex % slides.length;
+    setActiveDot();
+    track.scrollTo({
+      left: slides[index].offsetLeft,
+      behavior: "smooth",
+    });
+  };
+
+  const advance = () => {
+    if (paused) return;
+    goToSlide(index + 1);
+  };
+
+  track.addEventListener("mouseenter", () => {
+    paused = true;
+  });
+
+  track.addEventListener("mouseleave", () => {
+    paused = false;
+  });
+
+  track.addEventListener("focusin", () => {
+    paused = true;
+  });
+
+  track.addEventListener("focusout", () => {
+    paused = false;
+  });
+
+  track.addEventListener(
+    "scroll",
+    () => {
+      const current = Math.round(track.scrollLeft / track.clientWidth);
+      index = Math.max(0, Math.min(slides.length - 1, current));
+      setActiveDot();
     },
-    { threshold: 0.12 }
+    { passive: true },
   );
 
-  revealTargets.forEach((target) => observer.observe(target));
-}
+  dotButtons.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      paused = true;
+      goToSlide(dotIndex);
+      window.setTimeout(() => {
+        paused = false;
+      }, slideInterval);
+    });
+  });
+
+  setActiveDot();
+  setInterval(advance, slideInterval);
+});

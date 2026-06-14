@@ -5,297 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A curated Bali architecture portfolio by Laksana Matra, pairing local context with refined residential, villa, hospitality, and lifestyle design."
+      content="Dezier Studio portfolio images for Sacra|Stuja Cafe & Resto and Batuan Villa."
     />
-    <title>Designing Your Future Home in Bali | Laksana Matra</title>
+    <title>Dezier Studio | Portfolio</title>
     <link rel="preload" as="image" href="assets/portfolio/home-page.jpeg" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <a class="scroll-logo" href="#top" aria-label="Dezier Studio home">
-      <span>Dezier Studio</span>
-    </a>
-
-    <header class="site-header" aria-label="Primary navigation">
-      <nav class="nav-links" aria-label="Page sections">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-        <a href="minimal/">Minimal</a>
-      </nav>
+    <header class="minimal-header">
+      <a class="wordmark" href="/">Dezier Studio</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="sidebar-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true">
-          <img src="assets/portfolio/home-page.jpeg" alt="" />
+    <aside class="sidebar-menu" id="sidebar-menu" aria-hidden="true">
+      <div class="sidebar-panel">
+        <nav class="sidebar-rows" aria-label="Dezier Studio menu">
+          <section class="sidebar-row">
+            <button class="sidebar-row-toggle" type="button" aria-expanded="false">About</button>
+            <div class="sidebar-row-content">
+              <p>Dezier Studio presents selected tropical residential and hospitality work by Laksana Matra Karowista.</p>
+              <a href="#about-laksana">View profile</a>
+            </div>
+          </section>
+          <section class="sidebar-row">
+            <button class="sidebar-row-toggle" type="button" aria-expanded="false">Projects</button>
+            <div class="sidebar-row-content project-categories">
+              <div>
+                <p>Residential</p>
+                <a href="#batuan-title">Batuan Villa</a>
+              </div>
+              <div>
+                <p>Restaurant &amp; Bar</p>
+                <a href="#sacra-title">Sacra|Stuja Cafe &amp; Resto</a>
+                <a href="#molo-title">Molo Resto</a>
+              </div>
+              <div>
+                <p>Hospitality</p>
+                <a href="#kedisan-title">Kedisan Boutique Hotel</a>
+              </div>
+            </div>
+          </section>
+          <section class="sidebar-row">
+            <button class="sidebar-row-toggle" type="button" aria-expanded="false">Contacts</button>
+            <div class="sidebar-row-content">
+              <a href="mailto:laksanamatraa@gmail.com">laksanamatraa@gmail.com</a>
+              <a href="https://wa.me/6281338716636" target="_blank" rel="noreferrer">+6281338716636</a>
+              <a href="https://www.instagram.com/dezier.studio" target="_blank" rel="noreferrer">dezier.studio</a>
+            </div>
+          </section>
+        </nav>
+      </div>
+    </aside>
+
+    <main>
+      <section class="minimal-hero hero-slider" aria-label="Dezier Studio hero image slider">
+        <figure class="hero-slide is-active">
+          <img src="assets/portfolio/home-page.jpeg" alt="Organic tropical architecture with a low sweeping roof and palm landscape." />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/portfolio/home-page-2.jpeg" alt="Tropical villa courtyard with stone walls, timber screens, and planting." />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/portfolio/home-page-3.jpeg" alt="Layered tropical restaurant architecture with timber walkways and garden planting." />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/portfolio/home-page-4.jpeg" alt="Resort villa garden with stone walls, timber rooflines, and outdoor terraces." />
+        </figure>
+        <div class="hero-dots" aria-label="Hero image controls">
+          <button type="button" class="is-active" aria-label="Show image 1" aria-current="true"></button>
+          <button type="button" aria-label="Show image 2"></button>
+          <button type="button" aria-label="Show image 3"></button>
+          <button type="button" aria-label="Show image 4"></button>
         </div>
       </section>
 
-      <section class="hero-statement" aria-labelledby="hero-title">
-        <div>
-          <p class="eyebrow">Dezier Studio</p>
-          <h1 id="hero-title">Designing Your Future Home in Bali</h1>
-        </div>
-        <div class="hero-statement-copy">
+      <section class="about-laksana" id="about-laksana" aria-labelledby="about-laksana-title">
+        <figure class="about-portrait">
+          <img src="assets/portfolio/laksana-matra.jpg" alt="Portrait of Laksana Matra Karowista." />
+        </figure>
+        <div class="about-copy">
+          <p class="about-label">About</p>
+          <h1 id="about-laksana-title">Laksana Matra Karowista</h1>
           <p>
-            A curated architecture portfolio for design-led residences, villas,
-            hospitality spaces, and tropical lifestyle environments shaped by
-            local context, material craft, and everyday livability.
+            Laksana Matra Karowista is the architect behind Dezier Studio, shaping quiet tropical residences and hospitality spaces through proportion, material clarity, climate response, and lived atmosphere.
           </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-dark" href="#portfolio">View Design Portfolio</a>
-            <a class="button button-muted" href="#contact">Book a Private Conversation</a>
-          </div>
+          <a href="https://issuu.com/arcaka/docs/arcaka_issue_11-_architourism" target="_blank" rel="noreferrer">
+            Published design: 1st Winner, Atma Jaya University
+          </a>
         </div>
       </section>
 
-      <section class="portfolio" id="portfolio" aria-label="Portfolio">
-        <div class="gallery-actions" aria-label="Portfolio filters">
-          <button class="filter-button is-active" type="button" data-filter="all">All</button>
-          <button class="filter-button" type="button" data-filter="Private Villa Concepts">Private Villas</button>
-          <button class="filter-button" type="button" data-filter="View-Led Residences">Residences</button>
-          <button class="filter-button" type="button" data-filter="Wellness-Oriented Spaces">Wellness</button>
-          <button class="filter-button" type="button" data-filter="Compact Villa Design">Compact Villas</button>
-          <button class="filter-button" type="button" data-filter="Hospitality / Cafe &amp; Resto">Cafe &amp; Resto</button>
-          <button class="filter-button" type="button" data-filter="Private Residence">Private Residence</button>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card featured-project" data-category="Hospitality / Cafe &amp; Resto">
-            <div class="project-collage" aria-label="Sacra|Stuja Cafe &amp; Resto image series">
-              <a href="assets/portfolio/sacra-stuja-01.jpg" class="project-collage-main" aria-label="Open Sacra|Stuja exterior image">
-                <img src="assets/portfolio/sacra-stuja-01.jpg" alt="Sacra|Stuja Cafe and Resto exterior with sweeping roofline and tropical planting." />
-              </a>
-              <a href="assets/portfolio/sacra-stuja-02.jpg" aria-label="Open Sacra|Stuja dining interior image">
-                <img src="assets/portfolio/sacra-stuja-02.jpg" alt="Sacra|Stuja dining interior with checkered floor, timber furniture, and indoor planting." />
-              </a>
-              <a href="assets/portfolio/sacra-stuja-03.jpg" aria-label="Open Sacra|Stuja roof detail image">
-                <img src="assets/portfolio/sacra-stuja-03.jpg" alt="Sacra|Stuja timber roof interior with circular skylight and planted atrium." />
-              </a>
-              <a href="assets/portfolio/sacra-stuja-04.jpg" aria-label="Open Sacra|Stuja upper dining image">
-                <img src="assets/portfolio/sacra-stuja-04.jpg" alt="Sacra|Stuja upper dining area below a warm timber ceiling and pendant lights." />
-              </a>
-              <a href="assets/portfolio/sacra-stuja-05.jpg" aria-label="Open Sacra|Stuja mezzanine image">
-                <img src="assets/portfolio/sacra-stuja-05.jpg" alt="Sacra|Stuja mezzanine with lush planting, curved stair, and timber ceiling planes." />
-              </a>
-            </div>
-            <div class="project-content project-name-only">
-              <h3>Sacra|Stuja Cafe &amp; Resto</h3>
-            </div>
-          </article>
-
-          <article class="project-card featured-project" data-category="Private Residence">
-            <div class="project-collage" aria-label="Batuan Villa image series">
-              <a href="assets/portfolio/batuan-villa-01.jpg" class="project-collage-main" aria-label="Open Batuan Villa living and entry image">
-                <img src="assets/portfolio/batuan-villa-01.jpg" alt="Batuan Villa living area opening toward timber screens, stone walls, and tropical garden." />
-              </a>
-              <a href="assets/portfolio/batuan-villa-02.jpg" aria-label="Open Batuan Villa wardrobe image">
-                <img src="assets/portfolio/batuan-villa-02.jpg" alt="Batuan Villa timber wardrobe and slatted interior detailing." />
-              </a>
-              <a href="assets/portfolio/batuan-villa-03.jpg" aria-label="Open Batuan Villa courtyard image">
-                <img src="assets/portfolio/batuan-villa-03.jpg" alt="Batuan Villa courtyard with timber screens, stone wall, and tropical planting." />
-              </a>
-              <a href="assets/portfolio/batuan-villa-04.jpg" aria-label="Open Batuan Villa entrance image">
-                <img src="assets/portfolio/batuan-villa-04.jpg" alt="Batuan Villa entry with wood ceiling, stone wall, and timber door." />
-              </a>
-              <a href="assets/portfolio/batuan-villa-05.jpg" aria-label="Open Batuan Villa pool terrace image">
-                <img src="assets/portfolio/batuan-villa-05.jpg" alt="Batuan Villa pool terrace with timber soffit, stone wall, and planted courtyard." />
-              </a>
-            </div>
-            <div class="project-content project-name-only">
-              <h3>Batuan Villa</h3>
-            </div>
-          </article>
-
-          <!-- Portfolio card content is adapted from the attached PDF. Replace image/name/details here when final project permissions are confirmed. -->
-          <article class="project-card" data-category="Private Villa Concepts">
-            <a href="assets/portfolio/samara-bay.jpg" class="project-image" aria-label="Open Samara Bay Residence portfolio image">
-              <img src="assets/portfolio/samara-bay.jpg" alt="Ocean-view tropical villa concept with pool and greenery." />
-            </a>
-            <div class="project-content">
-              <p class="project-type">Private Villa Concepts</p>
-              <h3>Samara Bay Residence</h3>
-              <p>Open-plan hill residence with ocean views, biophilic transitions, palm-lined outdoor living, and an infinity pool.</p>
-              <dl>
-                <div><dt>Design highlights</dt><dd>View-led planning, natural materials, indoor-outdoor living</dd></div>
-                <div><dt>Suitable buyer profile</dt><dd>Second-home buyers and lifestyle homeowners seeking a calm coastal base</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="View-Led Residences">
-            <a href="assets/portfolio/samara-s7.jpg" class="project-image" aria-label="Open Samara Hills Residence portfolio image">
-              <img src="assets/portfolio/samara-s7.jpg" alt="Bedroom and living room concepts facing ocean views." />
-            </a>
-            <div class="project-content">
-              <p class="project-type">View-Led Residences</p>
-              <h3>Samara Hills Residence</h3>
-              <p>A hilltop villa arranged so each room has access to the view, with shade, craft details, and generous living areas.</p>
-              <dl>
-                <div><dt>Design highlights</dt><dd>Bedroom-view alignment, shaded roof planes, local craftsmanship</dd></div>
-                <div><dt>Suitable buyer profile</dt><dd>Long-stay residents who value comfort, outlook, and ease</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="Wellness-Oriented Spaces">
-            <a href="assets/portfolio/kiko-sejuk.jpg" class="project-image" aria-label="Open Kiko Sejuk portfolio image">
-              <img src="assets/portfolio/kiko-sejuk.jpg" alt="Coastal leisure and wellness center portfolio spread." />
-            </a>
-            <div class="project-content">
-              <p class="project-type">Wellness-Oriented Spaces</p>
-              <h3>Kiko Sejuk</h3>
-              <p>A coastal leisure center concept including hamam, spa, pool, restaurant, and hospitality-driven guest flow.</p>
-              <dl>
-                <div><dt>Design highlights</dt><dd>Wellness programming, restaurant amenity, relaxed coastal atmosphere</dd></div>
-                <div><dt>Suitable buyer profile</dt><dd>Investors interested in boutique hospitality or wellness-led villas</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="Compact Villa Design">
-            <a href="assets/portfolio/tba-villa.jpg" class="project-image" aria-label="Open TBA Villa portfolio image">
-              <img src="assets/portfolio/tba-villa.jpg" alt="Compact villa design with warm interior and exterior spaces." />
-            </a>
-            <div class="project-content">
-              <p class="project-type">Compact Villa Design</p>
-              <h3>TBA Villa</h3>
-              <p>A small-land villa resolving five ensuite bedrooms while preserving greenery, privacy, and a welcoming holiday feel.</p>
-              <dl>
-                <div><dt>Design highlights</dt><dd>Efficient planning, ensuite bedrooms, greenery inside and outside</dd></div>
-                <div><dt>Suitable buyer profile</dt><dd>Design-led investors seeking a compact rental-ready concept</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="Wellness-Oriented Spaces">
-            <a href="assets/portfolio/wedding-chapel.jpg" class="project-image" aria-label="Open Wedding Chapel portfolio image">
-              <img src="assets/portfolio/wedding-chapel.jpg" alt="Organic wedding chapel concept with curved forms and plans." />
-            </a>
-            <div class="project-content">
-              <p class="project-type">Tropical Residential Design</p>
-              <h3>Wedding Chapel</h3>
-              <p>Organic curved columns, faceted interior lines, and 360-degree viewing logic for a memorable Bali coastal setting.</p>
-              <dl>
-                <div><dt>Design highlights</dt><dd>Parametric form, ceremonial atmosphere, view maximization</dd></div>
-                <div><dt>Suitable buyer profile</dt><dd>Clients seeking a distinctive signature structure or destination venue</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="Private Villa Concepts">
-            <a href="assets/portfolio/oblock-restaurant.jpg" class="project-image" aria-label="Open O Block F&B Restaurant portfolio image">
-              <img src="assets/portfolio/oblock-restaurant.jpg" alt="Circular restaurant concept surrounded by rice fields." />
-            </a>
-            <div class="project-content">
-              <p class="project-type">Tropical Residential Design</p>
-              <h3>O Block F&amp;B Restaurant</h3>
-              <p>A circular organic concept in Tegalalang, shaped to maximize rice-field views while sitting gently in nature.</p>
-              <dl>
-                <div><dt>Design highlights</dt><dd>360-degree outlook, organic plan, nature-first presence</dd></div>
-                <div><dt>Suitable buyer profile</dt><dd>Buyers who want a future asset with a strong architectural identity</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="Wellness-Oriented Spaces">
-            <a href="assets/portfolio/uwsun-eco-resort.jpg" class="project-image" aria-label="Open Uwsun Eco-Resort portfolio image">
-              <img src="assets/portfolio/uwsun-eco-resort.jpg" alt="Eco-resort technical planning spread with villa and kids club layouts." />
-            </a>
-            <div class="project-content">
-              <p class="project-type">Wellness-Oriented Spaces</p>
-              <h3>Uwsun Eco-Resort</h3>
-              <p>A Uluwatu masterplan project combining villa layouts, technical planning, resort amenities, and family-oriented facilities.</p>
-              <dl>
-                <div><dt>Design highlights</dt><dd>Eco-resort planning, technical drawings, amenity programming</dd></div>
-                <div><dt>Suitable buyer profile</dt><dd>Clients exploring larger lifestyle sites or boutique resort-style concepts</dd></div>
-              </dl>
-            </div>
-          </article>
+      <section class="project-slider" aria-labelledby="sacra-title">
+        <h2 id="sacra-title">Sacra|Stuja Cafe &amp; Resto</h2>
+        <div class="slider-track" aria-label="Sacra|Stuja Cafe &amp; Resto image slider">
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-01.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 1." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-02.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 2." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-03.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 3." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-04.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 4." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-05.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 5." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-06.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 6." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-07.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 7." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-08.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 8." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-09.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 9." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-10.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 10." /></figure>
+          <figure class="slide"><img src="assets/portfolio/sacra-stuja-11.jpg" alt="Sacra|Stuja Cafe and Resto portfolio image 11." /></figure>
         </div>
       </section>
 
-      <section class="why-bali" id="why-bali" aria-labelledby="why-bali-title">
-        <div class="bali-image">
-          <img src="assets/portfolio/palm-grove.jpg" alt="Portfolio spread showing tropical residential architecture and warm interiors." />
-        </div>
-        <div class="bali-copy">
-          <p class="eyebrow">Why Bali</p>
-          <h2 id="why-bali-title">Architecture shaped by island life.</h2>
-          <ul class="benefit-list">
-            <li>A well-connected island setting with strong global appeal and established hospitality infrastructure.</li>
-            <li>Climate, wellness, food, culture, and community that support long-stay living.</li>
-            <li>Hospitality depth that can inform guest experience and rental-readiness planning.</li>
-            <li>Design-led homes and villas can feel calm, distinctive, and deeply connected to place.</li>
-            <li>Responsible projects benefit from clear briefing, local knowledge, and practical coordination.</li>
-          </ul>
+      <section class="project-slider" aria-labelledby="batuan-title">
+        <h2 id="batuan-title">Batuan Villa</h2>
+        <div class="slider-track" aria-label="Batuan Villa image slider">
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-01.jpg" alt="Batuan Villa portfolio image 1." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-02.jpg" alt="Batuan Villa portfolio image 2." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-03.jpg" alt="Batuan Villa portfolio image 3." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-04.jpg" alt="Batuan Villa portfolio image 4." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-05.jpg" alt="Batuan Villa portfolio image 5." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-06.jpg" alt="Batuan Villa portfolio image 6." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-07.jpg" alt="Batuan Villa portfolio image 7." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-08.jpg" alt="Batuan Villa portfolio image 8." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-09.jpg" alt="Batuan Villa portfolio image 9." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-10.jpg" alt="Batuan Villa portfolio image 10." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-11.jpg" alt="Batuan Villa portfolio image 11." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-12.jpg" alt="Batuan Villa portfolio image 12." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-13.jpg" alt="Batuan Villa portfolio image 13." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-14.jpg" alt="Batuan Villa portfolio image 14." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-15.jpg" alt="Batuan Villa portfolio image 15." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-16.jpg" alt="Batuan Villa portfolio image 16." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-17.jpg" alt="Batuan Villa portfolio image 17." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-18.jpg" alt="Batuan Villa portfolio image 18." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-19.jpg" alt="Batuan Villa portfolio image 19." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-20.jpg" alt="Batuan Villa portfolio image 20." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-21.jpg" alt="Batuan Villa portfolio image 21." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-22.jpg" alt="Batuan Villa portfolio image 22." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-23.jpg" alt="Batuan Villa portfolio image 23." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-24.jpg" alt="Batuan Villa portfolio image 24." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-25.jpg" alt="Batuan Villa portfolio image 25." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-26.jpg" alt="Batuan Villa portfolio image 26." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-27.jpg" alt="Batuan Villa portfolio image 27." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-28.jpg" alt="Batuan Villa portfolio image 28." /></figure>
+          <figure class="slide"><img src="assets/portfolio/batuan-villa-29.jpg" alt="Batuan Villa portfolio image 29." /></figure>
         </div>
       </section>
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="contact-copy">
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Begin privately. Move carefully.</h2>
-          <p>
-            Share a little about what you are considering. This form is an
-            initial conversation starter for architectural ideas, portfolio
-            enquiries, and future project possibilities.
-          </p>
-          <address>
-            <a href="mailto:dezierarchitect@gmail.com">dezierarchitect@gmail.com</a>
-            <a href="https://www.instagram.com/dezier.architect" rel="noreferrer" target="_blank">@dezier.architect</a>
-          </address>
+      <section class="project-slider" aria-labelledby="kedisan-title">
+        <h2 id="kedisan-title">Kedisan Boutique Hotel</h2>
+        <div class="slider-track" aria-label="Kedisan Boutique Hotel image slider">
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-01.jpg" alt="Kedisan Boutique Hotel portfolio image 1." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-02.jpg" alt="Kedisan Boutique Hotel portfolio image 2." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-03.jpg" alt="Kedisan Boutique Hotel portfolio image 3." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-04.jpg" alt="Kedisan Boutique Hotel portfolio image 4." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-05.jpg" alt="Kedisan Boutique Hotel portfolio image 5." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-06.jpg" alt="Kedisan Boutique Hotel portfolio image 6." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-07.jpg" alt="Kedisan Boutique Hotel portfolio image 7." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-08.jpg" alt="Kedisan Boutique Hotel portfolio image 8." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-09.jpg" alt="Kedisan Boutique Hotel portfolio image 9." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-10.jpg" alt="Kedisan Boutique Hotel portfolio image 10." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-11.jpg" alt="Kedisan Boutique Hotel portfolio image 11." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-12.jpg" alt="Kedisan Boutique Hotel portfolio image 12." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-13.jpg" alt="Kedisan Boutique Hotel portfolio image 13." /></figure>
+          <figure class="slide"><img src="assets/portfolio/kedisan-boutique-hotel-14.jpg" alt="Kedisan Boutique Hotel portfolio image 14." /></figure>
         </div>
-        <form class="contact-form" action="mailto:dezierarchitect@gmail.com" method="post" enctype="text/plain">
-          <label>
-            <span>Name</span>
-            <input name="Name" autocomplete="name" required />
-          </label>
-          <label>
-            <span>Email</span>
-            <input name="Email" type="email" autocomplete="email" required />
-          </label>
-          <label>
-            <span>Location / City</span>
-            <input name="Location / City" autocomplete="address-level2" />
-          </label>
-          <label>
-            <span>Interest</span>
-            <select name="Interest">
-              <option>Private residence</option>
-              <option>Villa design</option>
-              <option>Second home</option>
-              <option>Design consultation</option>
-            </select>
-          </label>
-          <label>
-            <span>Project type</span>
-            <select name="Project type">
-              <option>Still exploring</option>
-              <option>Private home</option>
-              <option>Boutique villa</option>
-              <option>Hospitality space</option>
-              <option>Wellness space</option>
-            </select>
-          </label>
-          <label>
-            <span>Timeline</span>
-            <select name="Timeline">
-              <option>0-6 months</option>
-              <option>6-12 months</option>
-              <option>1-2 years</option>
-              <option>Longer-term planning</option>
-            </select>
-          </label>
-          <label class="full">
-            <span>Message</span>
-            <textarea name="Message" rows="5" placeholder="Tell us what kind of Bali architecture project you are considering."></textarea>
-          </label>
-          <button class="button button-dark full" type="submit">Book a Private Consultation</button>
-        </form>
+      </section>
+
+      <section class="project-slider" aria-labelledby="molo-title">
+        <h2 id="molo-title">Molo Resto</h2>
+        <div class="slider-track" aria-label="Molo Resto image slider">
+          <figure class="slide"><img src="assets/portfolio/molo-resto-01.jpg" alt="Molo Resto portfolio image 1." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-02.jpg" alt="Molo Resto portfolio image 2." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-03.jpg" alt="Molo Resto portfolio image 3." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-04.jpg" alt="Molo Resto portfolio image 4." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-05.jpg" alt="Molo Resto portfolio image 5." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-06.jpg" alt="Molo Resto portfolio image 6." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-07.jpg" alt="Molo Resto portfolio image 7." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-08.jpg" alt="Molo Resto portfolio image 8." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-09.jpg" alt="Molo Resto portfolio image 9." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-10.jpg" alt="Molo Resto portfolio image 10." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-11.jpg" alt="Molo Resto portfolio image 11." /></figure>
+          <figure class="slide"><img src="assets/portfolio/molo-resto-12.jpg" alt="Molo Resto portfolio image 12." /></figure>
+        </div>
       </section>
     </main>
-
-    <script src="script.js"></script>
   </body>
 </html>

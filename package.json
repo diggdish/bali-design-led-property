@@ -1,6 +1,6 @@
 {
   "scripts": {
+    "build": "npm test",
     "test": "node tests/site-content.test.js"
-  },
-  "devDependencies": {}
+  }
 }
