@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "npm test",
+    "build": "npm test && node scripts/build-static.js",
     "test": "node tests/site-content.test.js"
   }
 }

@@ -7,6 +7,8 @@ const requiredFiles = [
   "index.html",
   "styles.css",
   "script.js",
+  "_redirects",
+  "scripts/build-static.js",
   "_archive/minimal/index.html",
   "_archive/minimal/minimal.css",
   "_archive/minimal/minimal-slider.js",
@@ -54,9 +56,13 @@ const archivedCss = fs.readFileSync(path.join(root, "_archive", "minimal", "mini
 const archivedJs = fs.readFileSync(path.join(root, "_archive", "minimal", "minimal-slider.js"), "utf8");
 const netlify = fs.readFileSync(path.join(root, "netlify.toml"), "utf8");
 const netlifyIgnore = fs.readFileSync(path.join(root, ".netlifyignore"), "utf8");
+const redirects = fs.readFileSync(path.join(root, "_redirects"), "utf8");
+const packageJson = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
 
 assert.ok(!fs.existsSync(path.join(root, "minimal")), "minimal folder should be archived, not live at root");
 assert.ok(netlifyIgnore.includes("_archive/"), "archived pages should not be deployed to Netlify");
+assert.strictEqual(redirects.trim(), "/* /index.html 200", "Cloudflare Pages should fall back to index.html");
+assert.strictEqual(packageJson.scripts.build, "npm test && node scripts/build-static.js", "build should validate and produce dist");
 
 assert.ok(html.includes('<link rel="stylesheet" href="styles.css" />'), "root should load root stylesheet");
 assert.ok(html.includes('<script src="script.js" defer></script>'), "root should load root script");
